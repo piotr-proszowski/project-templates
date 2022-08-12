@@ -1,1 +1,1 @@
-rootProject.name = "aloof-current"
+rootProject.name = "projectemplate"

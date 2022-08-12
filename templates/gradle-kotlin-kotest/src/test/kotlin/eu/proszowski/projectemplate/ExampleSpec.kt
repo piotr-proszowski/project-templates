@@ -1,4 +1,4 @@
-package eu.proszowski.aloof-current
+package eu.proszowski.projectemplate
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe

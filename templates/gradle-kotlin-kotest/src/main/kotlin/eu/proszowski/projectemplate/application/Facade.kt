@@ -1,4 +1,4 @@
-package eu.proszowski.aloof-current.application
+package eu.proszowski.projectemplate.application
 
 class Facade {
 }

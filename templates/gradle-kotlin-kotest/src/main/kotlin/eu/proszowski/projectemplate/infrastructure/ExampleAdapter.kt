@@ -1,7 +1,7 @@
-package eu.proszowski.aloof-current.infrastructure
+package eu.proszowski.projectemplate.infrastructure
 
-import eu.proszowski.aloof-current.application.ports.SomeUsefulRepository
-import eu.proszowski.aloof-current.domain.DomainObject
+import eu.proszowski.projectemplate.application.ports.SomeUsefulRepository
+import eu.proszowski.projectemplate.domain.DomainObject
 
 class ExampleAdapter : SomeUsefulRepository {
     override fun findSomeObjects(): List<DomainObject> {

@@ -5,16 +5,24 @@ MAIN_COLOR=212
 PROJECT_TEMPLATE_NAME=projectemplate
 
 function generateRandomName() {
-  echo $(node_modules/project-name-generator/src/generator-bin.js | grep dashed | awk '{print $2}' | tr -d "\'" | tr -d ",")
+  echo $($PROJECT_TEMPLATES_DIR/node_modules/project-name-generator/src/generator-bin.js | grep dashed | awk '{print $2}' | tr -d "\'" | tr -d ",")
 }
 
 function setUpProject() {
   projectPath=$1
   chosenTemplate=$2
-  chosenProjectName=$3
+  chosenProjectName=$(echo $3 | tr -d "-")
+  PROJECT_TEMPLATE_NAME=projectemplate
+
   mkdir -p $projectPath
-  cp -r ~/project-templates/templates/$chosenTemplate/* $projectPath
-  fd -x sd $PROJECT_TEMPLATE_NAME $chosenProjectName {}
+  cp -r $PROJECT_TEMPLATES_DIR/templates/$chosenTemplate/* $projectPath
+  echo "fd . $projectPath -x sd $PROJECT_TEMPLATE_NAME $chosenProjectName {}"
+  fd . $projectPath -x sd $PROJECT_TEMPLATE_NAME $chosenProjectName {}
+  pathsToEdit=$(fd --threads=1 . $projectPath | grep $PROJECT_TEMPLATE_NAME | tac)
+  for path in $pathsToEdit;
+  do
+    mv $path $(echo $path | sd $PROJECT_TEMPLATE_NAME $chosenProjectName)
+  done
 }
 
 echo "1. Choose a template:"
@@ -44,4 +52,4 @@ setUpProject $projectPath $chosenTemplate $chosenProjectName
 echo "We're ready to go. Let's start the party 🥳"
 echo "Template $(gum style --foreground $MAIN_COLOR $chosenTemplate) has been copied into: $(gum style --foreground $MAIN_COLOR $projectPath)"
 echo $projectPath | pbcopy
-echo "$projectPath has been copied to clipboard!"
+echo "$(gum style --foreground $MAIN_COLOR $projectPath) has been copied to clipboard!"

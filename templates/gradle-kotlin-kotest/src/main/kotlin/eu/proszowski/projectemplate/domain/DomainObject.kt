@@ -1,4 +1,4 @@
-package eu.proszowski.aloof-current.domain
+package eu.proszowski.projectemplate.domain
 
 class DomainObject {
     fun doSomethingUseful() {
