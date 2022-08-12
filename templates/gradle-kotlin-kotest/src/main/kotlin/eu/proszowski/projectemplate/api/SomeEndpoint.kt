@@ -1,4 +1,4 @@
-package eu.proszowski.bawdy-partner.api
+package eu.proszowski.projectemplate.api
 
 class SomeEndpoint {
 }

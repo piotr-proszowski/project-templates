@@ -1,6 +1,6 @@
-package eu.proszowski.bawdy-partner.application.ports
+package eu.proszowski.projectemplate.application.ports
 
-import eu.proszowski.bawdy-partner.domain.DomainObject
+import eu.proszowski.projectemplate.domain.DomainObject
 
 interface SomeUsefulRepository {
     fun findSomeObjects(): List<DomainObject>
