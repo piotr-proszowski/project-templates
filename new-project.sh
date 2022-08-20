@@ -5,7 +5,7 @@ MAIN_COLOR=212
 PROJECT_TEMPLATE_NAME=projectemplate
 
 function generateRandomName() {
-  echo $($PROJECT_TEMPLATES_DIR/node_modules/project-name-generator/src/generator-bin.js | grep dashed | awk '{print $2}' | tr -d "\'" | tr -d ",")
+  echo $($PROJECT_TEMPLATES_DIR/node_modules/project-name-generator/src/generator-bin.js --output dashed)
 }
 
 function setUpProject() {
@@ -15,13 +15,13 @@ function setUpProject() {
   PROJECT_TEMPLATE_NAME=projectemplate
 
   mkdir -p $projectPath
-  cp -r $PROJECT_TEMPLATES_DIR/templates/$chosenTemplate/* $projectPath
-  echo "fd . $projectPath -x sd $PROJECT_TEMPLATE_NAME $chosenProjectName {}"
+  cp -r $PROJECT_TEMPLATES_DIR/templates/$chosenTemplate/. $projectPath
+# gum spin -s line --title "Setting up the project" -- couldn't make spinner working, but it would be cool!
   fd . $projectPath -x sd $PROJECT_TEMPLATE_NAME $chosenProjectName {}
   pathsToEdit=$(fd --threads=1 . $projectPath | grep $PROJECT_TEMPLATE_NAME | tac)
   for path in $pathsToEdit;
   do
-    mv $path $(echo $path | sd $PROJECT_TEMPLATE_NAME $chosenProjectName)
+    mv $path $(echo $path | sd $PROJECT_TEMPLATE_NAME $chosenProjectName) 2> /dev/null
   done
 }
 
@@ -46,7 +46,6 @@ echo "🤖 Chosen $(gum style --foreground $MAIN_COLOR $chosenLocation) as a loc
 
 projectPath=${chosenLocation}${chosenProjectName}
 
-# gum spin -s line --title "Setting up the project" -- couldn't make spinner working, but it would be cool!
 setUpProject $projectPath $chosenTemplate $chosenProjectName
 
 echo "We're ready to go. Let's start the party 🥳"

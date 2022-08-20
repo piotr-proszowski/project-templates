@@ -7,14 +7,6 @@ plugins {
     id("application")
 }
 
-group = "eu.proszowski"
-version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
-
-repositories {
-    mavenCentral()
-}
-
 application {
     mainClass.set("eu.proszowski.projectemplate.Main")
 }
@@ -24,15 +16,4 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     testImplementation("io.kotest:kotest-runner-junit5:5.4.1")
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "11"
-    }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
