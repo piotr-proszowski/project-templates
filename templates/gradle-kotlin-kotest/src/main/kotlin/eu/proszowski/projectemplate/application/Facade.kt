@@ -1,4 +1,4 @@
-package eu.proszowski.projectemplate.application
+package dev.proszowski.projectemplate.application
 
 class Facade {
 }

@@ -1,4 +1,4 @@
-package eu.proszowski.projectemplate.api
+package dev.proszowski.projectemplate.api
 
 class SomeEndpoint {
 }

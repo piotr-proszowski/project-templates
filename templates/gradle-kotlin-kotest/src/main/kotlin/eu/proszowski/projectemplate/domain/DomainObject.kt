@@ -1,4 +1,4 @@
-package eu.proszowski.projectemplate.domain
+package dev.proszowski.projectemplate.domain
 
 class DomainObject {
     fun doSomethingUseful() {

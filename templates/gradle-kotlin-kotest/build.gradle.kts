@@ -7,7 +7,7 @@ plugins {
     id("application")
 }
 
-group = "eu.proszowski"
+group = "dev.proszowski"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -16,7 +16,7 @@ repositories {
 }
 
 application {
-    mainClass.set("eu.proszowski.projectemplate.Main")
+    mainClass.set("dev.proszowski.projectemplate.Main")
 }
 
 dependencies {

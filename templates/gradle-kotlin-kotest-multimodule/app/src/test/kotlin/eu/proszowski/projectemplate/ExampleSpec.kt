@@ -1,4 +1,4 @@
-package eu.proszowski.projectemplate
+package dev.proszowski.projectemplate
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe

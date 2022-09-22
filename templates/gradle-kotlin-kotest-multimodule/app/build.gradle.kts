@@ -8,7 +8,7 @@ plugins {
 }
 
 application {
-    mainClass.set("eu.proszowski.projectemplate.Main")
+    mainClass.set("dev.proszowski.projectemplate.Main")
 }
 
 dependencies {

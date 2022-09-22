@@ -1,5 +1,5 @@
 
-package eu.proszowski.awesomeproject
+package dev.proszowski.awesomeproject
 
 class Main {
     companion object {
