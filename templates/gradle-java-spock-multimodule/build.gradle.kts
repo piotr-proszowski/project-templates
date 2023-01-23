@@ -6,7 +6,7 @@ plugins {
 
 group = "dev.proszowski"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_19
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 allprojects {
     repositories {
@@ -19,7 +19,7 @@ subprojects {
         withType<KotlinCompile> {
             kotlinOptions {
                 freeCompilerArgs = listOf("-Xjsr305=strict")
-                jvmTarget = "19"
+                jvmTarget = "11"
             }
         }
 

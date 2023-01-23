@@ -1,6 +1,6 @@
-package dev.proszowski.projectemplate;
+package dev.proszowski.projectemplate
 
-import spock.lang.Specification;
+import spock.lang.Specification
 
 class BaseIntSpec extends Specification {
     TestClock clock = new TestClock();

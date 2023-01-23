@@ -12,9 +12,13 @@ application {
 
 dependencies {
     implementation("org.slf4j:slf4j-api:2.0.6")
-    implementation("log4j:log4j:1.2.17")
+    implementation("ch.qos.logback:logback-classic:1.4.5")
+    annotationProcessor("org.projectlombok:lombok:1.18.24")
+
+    implementation("org.projectlombok:lombok:1.18.24")
 
     testImplementation("org.apache.groovy:groovy:4.0.7")
+    testImplementation("net.bytebuddy:byte-buddy:1.12.22")
     testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
 }
 
