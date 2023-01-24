@@ -19,6 +19,7 @@ dependencies {
 
     testImplementation("org.apache.groovy:groovy:4.0.7")
     testImplementation("net.bytebuddy:byte-buddy:1.12.22")
+    testImplementation("org.objenesis:objenesis:3.3")
     testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
 }
 
